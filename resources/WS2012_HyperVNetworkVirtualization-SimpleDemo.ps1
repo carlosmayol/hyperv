@@ -141,8 +141,8 @@
 #
 # [1] From within all VMs, open a PowerShell window with Admin privilege
 # [2] Create firewall rules to allow ICMP (ping) packets:
-#     PS:> New-NetFirewallRule –DisplayName “Allow ICMPv4-In” –Protocol ICMPv4
-#     PS:> New-NetFirewallRule –DisplayName “Allow ICMPv4-Out” –Protocol ICMPv4 –Direction Outbound
+#     PS:> New-NetFirewallRule Â–DisplayName Â“Allow ICMPv4-InÂ” Â–Protocol ICMPv4
+#     PS:> New-NetFirewallRule Â–DisplayName Â“Allow ICMPv4-OutÂ” Â–Protocol ICMPv4 Â–Direction Outbound
 # [3] From Blue1, ping Blue2's IP address:
 #     Blue1 PS:> ping 10.0.0.7
 # [4] From Red1, ping Red2's IP address:
