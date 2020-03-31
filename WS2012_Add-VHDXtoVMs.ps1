@@ -1,5 +1,5 @@
 ﻿$VMNames=5..6 | % {"LAB6_WS2019_0$_"}
-5..8 | Foreach-Object {
+9..10 | Foreach-Object {
     $DiskPathp1 = "V:\VMsHyperV\VMs\Virtual Hard Disks\"
     $DiskPathp2 = $vmnames[0]
     $DiskPathp3 = "_d$_.vhdx"
