@@ -5,4 +5,3 @@ $a = compare-vm  -register -Path "$vm"
 $a.Incompatibilities[0].Source | Connect-VMNetworkAdapter -SwitchName Private
 Import-VM -CompatibilityReport $a 
 }
-#
