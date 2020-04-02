@@ -1,1 +1,0 @@
-Set-VMReplication -VMName VMreplica1 -ReplicaServerName WS2012CLU-LAB -ReplicaServerPort 80

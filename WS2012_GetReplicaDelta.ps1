@@ -1,1 +1,0 @@
-﻿get-vm | Get-VMReplication | select name, replicationmode, replicationhealth,  @{Expression={"{0:N0}" -f ((get-date)-($_.lastreplicationtime)).TotalMinutes};Label="Delta (min)"}
