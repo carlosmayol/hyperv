@@ -1,5 +1,6 @@
 ﻿#.\InjectIP.ps1 -VMName "TestVm1" -NICName "Network Adapter" -IPAddress "10.1.1.12" -Subnet "255.255.255.0" -DefaultGateway "10.1.1.1" -DNSServers "10.1.1.100","10.1.1.101"
 #If DefaultGateway is set use -DefaultGateway "" to remove???
+
 param
 (
     [parameter(mandatory=$True)]
