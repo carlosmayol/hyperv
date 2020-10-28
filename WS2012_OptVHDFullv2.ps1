@@ -1,4 +1,4 @@
-﻿foreach ($vm in (get-vm | Where-Object {$_.State -ne "running" }))
+﻿foreach ($vm in (get-vm | Where-Object {$_.State -eq "off" }))
     {
         $disks = $vm | Get-VMHardDiskDrive | Select-Object -ExpandProperty Path
         

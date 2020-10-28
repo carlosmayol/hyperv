@@ -1,0 +1,2 @@
+$clusterResource = Get-ClusterResource -Cluster SomeClusterName | Where ResourceType -eq "Virtual Machine"
+Get-VM -ClusterObject $clusterResource |  Where-Object {$_.uptime -gt "30.00:00:00"} | Sort-Object -Property Uptime 
