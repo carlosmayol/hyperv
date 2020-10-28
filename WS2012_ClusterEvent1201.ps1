@@ -4,7 +4,6 @@ $GroupOnlineEvent.Events | ? {$_.id -eq 1201}
 
 The Cluster service successfully brought the clustered role '%1' online.
 #>
-
 #v1.0 Script
 $Query = @"
 <QueryList>
