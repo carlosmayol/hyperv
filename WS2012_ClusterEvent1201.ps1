@@ -24,8 +24,6 @@ $cluster = get-cluster -Domain $env:USERDOMAIN | Select-Object Name | Out-GridVi
 
 $servers = Get-ClusterNode -Cluster $cluster.name | select -ExpandProperty Name
 
-$result = @()
-
 ForEach ($server in $servers) {
     $events = Get-WinEvent -FilterXml $Query -ComputerName $server
 
