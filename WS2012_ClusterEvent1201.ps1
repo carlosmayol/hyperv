@@ -9,7 +9,7 @@ The Cluster service successfully brought the clustered role '%1' online.
 $Query = @"
 <QueryList>
   <Query Id="0" Path="Microsoft-Windows-FailoverClustering/Operational">
-    <Select Path="Microsoft-Windows-FailoverClustering/Operational">*[System[(Level=4 or Level=0) and (EventID=1201) and TimeCreated[timediff(@SystemTime) &lt;= 604800000]]]</Select>
+    <Select Path="Microsoft-Windows-FailoverClustering/Operational">*[System[(Level=4 or Level=0) and (EventID=1201) and TimeCreated[timediff(@SystemTime) &lt;= 432000000]]]</Select>
   </Query>
 </QueryList>
 "@
@@ -23,8 +23,6 @@ $VMName = Read-Host "Enter VM NAME"
 $cluster = get-cluster -Domain $env:USERDOMAIN | Select-Object Name | Out-GridView -Title "Select your Cluster" -OutputMode Single 
 
 $servers = Get-ClusterNode -Cluster $cluster.name | select -ExpandProperty Name
-
-#$servers = "lab6_ws2019_05", "lab6_ws2019_06"
 
 $result = @()
 
