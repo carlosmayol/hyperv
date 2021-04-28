@@ -10,8 +10,13 @@ Get-VMNetworkAdapter -VMName * -Name pNIC | Set-VMNetworkAdapterVlan -Trunk -All
 #Get-VMNetworkAdapter -VMName * -Name pNIC | Set-VMNetworkAdapterVlan -Untagged
 
 
+get-vm * | ? State -eq running | Get-VMNetworkAdapter | ? {$_.IPAddresses -match "169.*"} | Set-VMNetworkAdapter -DeviceNaming On -Passthru | Rename-VMNetworkAdapter -NewName 'pNIC'
+get-vm * | ? State -eq running | Get-VMNetworkAdapter | ? {$_.IPAddresses -match "169.*"} | Set-VMNetworkAdapterVlan -Trunk -AllowedVlanIdList "10,20,30,40" -NativeVlanId 0
+
 
 #Showing Stuff
 get-vm * | ? State -eq running | Get-VMNetworkAdapter
 
-get-vm * | ? State -eq running | Get-VMNetworkAdapter | Get-VMNetworkAdapterVlan | ft
+get-vm * | ? State -eq running | Get-VMNetworkAdapterVlan
+
+
